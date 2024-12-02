@@ -56,12 +56,13 @@ async def user(user: User):
 async def user(id: str):
 
     found = db_client.users.find_one_and_delete({"_id": ObjectId(id)})
-        
+
+    if found:
+        return {"Se elimino el usuario"}
     
     if not found:
         return {"No se encontro el usuario"}
-    else:
-        return {"Se borro el usuario deseado"}
+    
 
     
 
