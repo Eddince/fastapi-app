@@ -59,8 +59,7 @@ async def user(id: str):
      
     if not found:
         return {"No se encontro el usuario"}
-    if not not found:
-        return {"Se elimino el usuario"}
+    
     
 
     
