@@ -9,7 +9,9 @@ from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm  #m
 #url local: http://127.0.0.1:8000
 
 #app = FastAPI()
-router = APIRouter()
+router = APIRouter(prefix="/basic",
+                   tags=["basic"], 
+                   responses= {status.HTTP_404_NOT_FOUND:{"Mensaje":"No encontrado"}})
 
 oauth2 = OAuth2PasswordBearer(tokenUrl="login")  #criterio de autenticacion
 
