@@ -17,7 +17,9 @@ SECRET = "bab211d51bec278ba5064737db31dfd95936b88525e0facdf681a39f3aaa1cfb" #est
 crypt = CryptContext(schemes=["bcrypt"])  #contexto de encriptacion
 
 #app = FastAPI()
-router = APIRouter()
+router = APIRouter(prefix="/jwt",
+                   tags=["jwt"], 
+                   responses= {status.HTTP_404_NOT_FOUND:{"Mensaje":"No encontrado"}})
 
 oauth2 = OAuth2PasswordBearer(tokenUrl="login_crypt")  #criterio de autenticacion
 
