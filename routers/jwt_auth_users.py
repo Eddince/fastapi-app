@@ -18,8 +18,8 @@ crypt = CryptContext(schemes=["bcrypt"])  #contexto de encriptacion
 
 #app = FastAPI()
 router = APIRouter(prefix="/jwt",
-                   tags=["jwt"], 
-                   responses= {status.HTTP_404_NOT_FOUND:{"Mensaje":"No encontrado"}})
+                   tags=["jwt"]
+                   )
 
 oauth2 = OAuth2PasswordBearer(tokenUrl="login_crypt")  #criterio de autenticacion
 
