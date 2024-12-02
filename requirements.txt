@@ -1,5 +1,6 @@
 fastapi
 uvicorn
+status
 python-jose
 passlib
 pymongo
